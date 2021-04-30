@@ -1,0 +1,4 @@
+<% @guest_book.guest_book_entries.each {|entry| %>
+    <p> <%= entry.person_name %> </p>
+    <p> <%= entry.body %> </p>
+<% } %>

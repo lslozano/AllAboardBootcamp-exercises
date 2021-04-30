@@ -1,0 +1,33 @@
+
+<div>
+    <% if current_user.nil? %>
+        <h2>This are all the comments that have been posted and by whom:</h2>
+    <% else %>
+        <h2>Hello <%= current_user.name %>. Here are all the comments that have been posted and by whom:</h2>
+    <% end %>
+</div>
+
+<div class="comments-box">
+    <% if @comments.empty? %>
+        <p>There are no comments yet.</p>
+    <% end %>
+
+    <% @comments.each { | comment | %>
+        <strong>Comment:</strong>
+        <%= comment.body %>
+        <strong>By:</strong>
+        <% user = User.where(id: comment.user_id).first %>
+        <%= user.name %>
+        <br>
+    <% } %>
+</div>
+<br>
+
+<div class="register-new">
+    <% if current_user.nil? %>
+        <p>If you would like to leave a comment, please register first using the link below.</p>
+        <%= link_to "New user", new_user_path %>
+    <% else %>
+        <%= link_to "Add new comment", new_comment_path %>
+    <% end %>
+</div>

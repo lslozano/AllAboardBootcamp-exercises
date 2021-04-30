@@ -1,0 +1,29 @@
+<h1><%= @album.name %></h1>
+
+<h3>Songs:</h3>
+
+<div>
+    <% if @songs.empty? %>
+        <p> 
+            There are no songs registered yet. 
+            Please feel free to add one by clicking the link below. 
+        </p>
+    <% end %>
+
+    <% @songs.each {|song| %>
+        <div>
+            <%= song.name %>
+        </div>
+    <% } %> 
+</div>
+<br>
+
+<div>
+    <%= link_to "Add songs to the album", new_album_song_path(@album) %>
+</div>
+
+<br>
+
+<div>
+    <%= link_to "Back to all albums.", :albums %>
+</div>

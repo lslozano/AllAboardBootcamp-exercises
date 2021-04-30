@@ -1,0 +1,9 @@
+<h1>Chats directory</h1>
+
+<%  @chats.each {|chat| %>
+    <div>
+        <%= chat.name %>
+        <%= link_to "Go to chat", chat_path(chat) %>
+    </div>
+    <br>
+<% } %>

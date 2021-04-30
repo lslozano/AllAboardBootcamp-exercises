@@ -1,0 +1,15 @@
+<h1>Add songs to the Album <%= @album.name %></h1>
+
+<div>
+    <%= form_for [@album, Song.new] do |f| %>
+        <%= f.text_field :name %>
+        <%= f.submit %>
+    <% end %>
+</div>
+
+<br>
+
+<%= link_to "Back to album", album_path(@album) %>
+
+<br>
+

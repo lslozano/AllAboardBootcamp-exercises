@@ -1,0 +1,16 @@
+<h1> Welcome to the Guest Book: <%= @guest_book.name %> </h1>
+
+<h2> Here are the entries: </h2>
+
+<div class="entries" data-guest-book-id=<%= @guest_book.id %> >
+</div>
+
+<div>
+    <p>Add an entry to the guest book:</p>
+    <br>
+    <%= form_for [@guest_book, GuestBookEntry.new] do |f| %>
+        <%= f.text_field :person_name, placeholder: "Your name" %>
+        <%= f.text_field :body, placeholder: "Entry body" %>
+        <%= f.submit %>
+    <% end %>
+</div>

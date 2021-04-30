@@ -1,0 +1,25 @@
+// Place all the styles related to the animals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.animal-container {
+    background: white;
+    border: 5px solid blue;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px auto;
+    width: 550px;
+}
+
+.animal-img {
+    height: 350px;
+    padding-top: 25px;
+    width: 450px;
+}
+
+.animal-name {
+    color: blue;
+    font-size: 25px;
+}

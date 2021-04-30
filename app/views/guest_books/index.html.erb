@@ -1,0 +1,8 @@
+<h1>Welcome to the Guest Books!</h1>
+
+<% @guest_books.each { |guest_book| %>
+        <div class="guest-book-container" data-guest-book-id=<%= guest_book.id %> >
+            <p class="guest-book-name"> <%= guest_book.name %> </p>
+            <%= link_to "Check out the guest book entries.", guest_book_path(guest_book) %>
+        </div>
+<% } %>

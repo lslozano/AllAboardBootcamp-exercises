@@ -1,0 +1,32 @@
+<h1>Hello, welcome to the Albums page!</h1>
+<div>
+    <h2>Here is a list of all the albums available at the moment:</h2>
+
+    <div>
+        <% if @albums.empty? %>
+            <p> 
+                There are no albums registered yet. 
+                Please feel free to add one with the form below. 
+            </p>
+        <% end %>
+        <% @albums.each {|album| %>
+            <div>
+                <strong>Album title:</strong>
+                <%= album.name %>
+                <strong>Artist:</strong>
+                <%= album.artist_name %>
+                <%= link_to "View album", album_path(album) %>
+            </div>
+        <% } %> 
+        <br>
+    </div>
+</div>
+
+<div>
+    <h2>Add an album to the list:</h2>
+    <%= form_for Album.new do |f| %>
+        <%= f.text_field :name, placeholder: "Name of Album" %>
+        <%= f.text_field :artist_name, placeholder: "Artist name" %>
+        <%= f.submit %>
+    <% end %>
+</div>

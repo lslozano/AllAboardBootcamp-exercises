@@ -1,0 +1,9 @@
+<h1>Welcome to <%= @chat.name %></h1>
+
+<% @chat.get_messages.each {|message| %>
+    <div>
+        <strong>Message:</strong>
+         <%= message.message %>
+    </div>
+<% } %> 
+<br>

@@ -1,0 +1,9 @@
+<h2>Create a new comment:</h2>
+
+<%= form_for @comment do |f| %>
+    <%= f.text_field :body, placeholder: "Write your comment." %>
+    <%= f.submit %>
+<% end %>
+<br>
+
+<%= link_to "Back to all comments", comments_path %>

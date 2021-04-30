@@ -1,0 +1,19 @@
+<h1>You are in <%= @chat.name %> </h1>
+
+<h3>The messages of this chat are:</h3>
+<br>
+
+<% if @chat.get_messages.empty? %>
+    There are no messages here.
+    <br>
+<% end %>
+
+<% @chat.get_messages.each {|message| %>
+    <div>
+        <strong>Message:</strong>
+         <%= message.message %>
+    </div>
+<% } %> 
+<br>
+
+<%= link_to "Back to all chats", :chats %>

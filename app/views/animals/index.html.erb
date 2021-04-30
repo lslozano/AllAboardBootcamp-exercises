@@ -1,0 +1,8 @@
+<h1>Welcome to the animals page!</h1>
+
+<% @animals_sorted.each { |animal| %>
+        <div id="animal" class="animal-container" data-animal-id=<%= animal.id %> >
+            <img class="animal-img" src=<%= animal.image_url %> alt="animal image"/>
+            <p class="animal-name"> <%= animal.name %> </p>
+        </div>
+<% } %>

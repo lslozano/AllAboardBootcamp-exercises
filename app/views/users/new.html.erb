@@ -1,0 +1,8 @@
+<h2>Create a new user: </h2>
+
+<%= form_for @user do |f| %>
+    <%= f.text_field :name, placeholder: "Name of user" %>
+    <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "Back to all comments", comments_path %>
